@@ -1,0 +1,53 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion libs.versions.androidx.compose.compiler.get()
+    }
+
+    namespace 'org.bubenheimer'
+
+    compileSdk libs.versions.android.sdk.compile.get().toInteger()
+
+    defaultConfig {
+        minSdk libs.versions.android.sdk.min.get().toInteger()
+        targetSdk libs.versions.android.sdk.target.get().toInteger()
+    }
+
+    compileOptions {
+        sourceCompatibility libs.versions.java.get()
+        targetCompatibility libs.versions.java.get()
+    }
+
+    kotlinOptions {
+        jvmTarget = libs.versions.java.get()
+    }
+
+    buildTypes {
+        debug {
+            setMinifyEnabled(false)
+        }
+
+        release {
+            setMinifyEnabled(true)
+            setShrinkResources(true)
+            setDebuggable(false)
+            setJniDebuggable(false)
+            setRenderscriptDebuggable(false)
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+        }
+    }
+}
+
+dependencies {
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.compose.activity
+    implementation libs.androidx.compose.runtime
+}
