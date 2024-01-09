@@ -39,6 +39,13 @@ private fun Parent() {
         }
     }
 
+    GoogleMapFake(value)
+}
+
+@Composable
+private fun GoogleMapFake(value: Int) {
+    SideEffect { println("GoogleMapFake() recomposed, value: $value") }
+
     val currentValue by rememberUpdatedState(value)
 
     val parentComposition = rememberCompositionContext()
