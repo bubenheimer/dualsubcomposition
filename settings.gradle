@@ -27,7 +27,7 @@ dependencyResolutionManagement {
             version('androidx-compose-compiler', '1.5.8')
 //            version('androidx-compose', '1.0.5')
 //            version('androidx-compose', '1.5.4')
-            version('androidx-compose', '1.6.0-rc01')
+            version('androidx-compose', '1.6.0')
 
             version('java', JavaVersion.VERSION_11.toString())
 
