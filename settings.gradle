@@ -47,7 +47,11 @@ dependencyResolutionManagement {
                     .versionRef('androidx-activity')
             library('androidx-compose-activity', 'androidx.activity', 'activity-compose')
                     .versionRef('androidx-activity')
+            library('androidx-compose-foundation', 'androidx.compose.foundation', 'foundation')
+                    .versionRef('androidx-compose')
             library('androidx-compose-runtime', 'androidx.compose.runtime', 'runtime')
+                    .versionRef('androidx-compose')
+            library('androidx-compose-ui-tooling', 'androidx.compose.ui', 'ui-tooling')
                     .versionRef('androidx-compose')
         }
     }
