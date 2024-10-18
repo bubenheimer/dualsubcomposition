@@ -1,15 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.android)
 }
 
 android {
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion libs.versions.androidx.compose.compiler.get()
     }
 
     namespace 'org.bubenheimer'
@@ -47,7 +44,9 @@ android {
 }
 
 dependencies {
-    implementation libs.androidx.activity.ktx
+    implementation(platform(libs.androidx.compose.bom))
+
+    implementation libs.androidx.activity
     implementation libs.androidx.compose.activity
     implementation libs.androidx.compose.foundation
     implementation libs.androidx.compose.runtime

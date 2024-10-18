@@ -11,50 +11,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-
-    versionCatalogs {
-        libs {
-//            version('android-plugin', '7.0.0')
-            version('android-plugin', '8.2.2')
-
-            version('android-sdk-compile', '34')
-            version('android-sdk-min', '26')
-            version('android-sdk-target', '34')
-
-//            version('androidx-activity', '1.4.0')
-            version('androidx-activity', '1.8.2')
-//            version('androidx-compose-compiler', '1.0.5')
-            version('androidx-compose-compiler', '1.5.8')
-//            version('androidx-compose', '1.0.5')
-//            version('androidx-compose', '1.5.4')
-//            version('androidx-compose', '1.7.0-alpha01')
-            version('androidx-compose', '1.6.0')
-
-            version('java', JavaVersion.VERSION_11.toString())
-
-//            version('kotlin', '1.5.31')
-            version('kotlin', '1.9.22')
-
-
-            plugin('android-application', 'com.android.application')
-                    .versionRef('android-plugin')
-
-            plugin('kotlin-android', 'org.jetbrains.kotlin.android')
-                    .versionRef('kotlin')
-
-
-            library('androidx-activity-ktx', 'androidx.activity', 'activity-ktx')
-                    .versionRef('androidx-activity')
-            library('androidx-compose-activity', 'androidx.activity', 'activity-compose')
-                    .versionRef('androidx-activity')
-            library('androidx-compose-foundation', 'androidx.compose.foundation', 'foundation')
-                    .versionRef('androidx-compose')
-            library('androidx-compose-runtime', 'androidx.compose.runtime', 'runtime')
-                    .versionRef('androidx-compose')
-            library('androidx-compose-ui-tooling', 'androidx.compose.ui', 'ui-tooling')
-                    .versionRef('androidx-compose')
-        }
-    }
 }
 
 include(":app")
